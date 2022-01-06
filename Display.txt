@@ -1,0 +1,39 @@
+module display(count,out1,out2);
+input [4:0]count;
+output reg [6:0]out1;
+output reg [6:0]out2;
+
+wire [4:0]first;
+wire [4:0]second;
+
+assign first = count / 10 ;
+assign second = count % 10;
+
+always@(count)
+begin
+    case(first)
+        4'b0000:out1=7'b1000000;//0
+        4'b0001:out1=7'b1111001;//1
+        4'b0010:out1=7'b0100100;//2
+        4'b0011:out1=7'b0110000;//3
+        4'b0100:out1=7'b0011001;//4
+        4'b0101:out1=7'b0010010;//5
+        4'b0110:out1=7'b0000010;//6
+        4'b0111:out1=7'b1111000;//7
+        4'b1000:out1=7'b0000000;//8
+        4'b1001:out1=7'b0010000;//9
+    endcase
+    case(second)
+        4'b0000:out2=7'b1000000;//0
+        4'b0001:out2=7'b1111001;//1
+        4'b0010:out2=7'b0100100;//2
+        4'b0011:out2=7'b0110000;//3
+        4'b0100:out2=7'b0011001;//4
+        4'b0101:out2=7'b0010010;//5
+        4'b0110:out2=7'b0000010;//6
+        4'b0111:out2=7'b1111000;//7
+        4'b1000:out2=7'b0000000;//8
+        4'b1001:out2=7'b0010000;//9
+    endcase
+end
+endmodule
