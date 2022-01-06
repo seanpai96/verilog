@@ -50,17 +50,18 @@ begin
 end
 endmodule
 
-module countDown(divClk,rst,timeNow,overFlow);
+module countDown(divClk,rst,timeNow,overFlow,led0, led1, led2, led3, led4, led5, led6, led7, led8, led9);
 input divClk,rst;
 output reg [4:0]timeNow;
-output reg overFlow;
-always@(posedge divClk)
+output reg overFlow,led0, led1, led2, led3, led4, led5, led6, led7, led8, led9;
+always@(posedge divClk or negedge rst)
 begin
+	 
     if(!rst)
     begin  
-        timeNow <= `GameDuration;
-        overFlow = 0;
-    end
+			timeNow <= `GameDuration;
+			overFlow <= 0;
+	 end
     else
     begin
         if(timeNow == 0)
@@ -70,7 +71,33 @@ begin
         end
         else
             timeNow <= timeNow - 1;
+		 if(overFlow == 1) begin
+			if(timeNow % 2 == 0) begin
+				led0 <= 1;
+				led1 <= 1;
+				led2 <= 1;
+				led3 <= 1;
+				led4 <= 1;
+				led5 <= 1;
+				led6 <= 1;
+				led7 <= 1;
+				led8 <= 1;
+				led9 <= 1;
+			end else begin
+				led0 <= 0;
+				led1 <= 0;
+				led2 <= 0;
+				led3 <= 0;
+				led4 <= 0;
+				led5 <= 0;
+				led6 <= 0;
+				led7 <= 0;
+				led8 <= 0;
+				led9 <= 0;
+			end
+		 end
     end
+	 
 end
 endmodule
 
@@ -114,16 +141,17 @@ begin
 end
 endmodule
 
-module main(clk,rst,s1,s2,s3,out1,out2,out3,out4);
-input clk,rst,s1,s2,s3;
-output [6:0]out1,out2,out3,out4;
-wire toggle1Hz;
-clk1Hz Clk1Hz(clk,rst,toggle1Hz);
-wire [4:0]targetLevel;
-level Level(s1,s2,s3,targetLevel);
-wire [4:0]timeNow;
-wire overFlow;
-countDown CountDown(toggle1Hz,rst,timeNow,overFlow);
-display LevelDisplay(targetLevel,out1,out2);
-display CountDownDisplay(timeNow,out3,out4);
+module main(clk,rst,s1,s2,s3,out1,out2,out3,out4, led0, led1, led2, led3, led4, led5, led6, led7, led8, led9);
+	input clk,rst,s1,s2,s3;
+	output led0, led1, led2, led3, led4, led5, led6, led7, led8, led9;
+	output [6:0]out1,out2,out3,out4;
+	wire toggle1Hz;
+	clk1Hz Clk1Hz(clk,rst,toggle1Hz);
+	wire [4:0]targetLevel;
+	level Level(s1,s2,s3,targetLevel);
+	wire [4:0]timeNow;
+	wire overFlow;
+	countDown CountDown(toggle1Hz,rst,timeNow,overFlow,led0, led1, led2, led3, led4, led5, led6, led7, led8, led9);
+	display LevelDisplay(targetLevel,out2,out1);
+	display CountDownDisplay(timeNow,out3,out4);
 endmodule
