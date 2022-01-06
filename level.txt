@@ -6,15 +6,15 @@ always@(state1 or state2 or state3)
 begin
     if(state1 && state2 && state3)
     begin
-        pointOut <= 4'd20;
+        pointOut <= 5'd20;
     end
     else if(!state1 && state2 && state3)
     begin
-        pointOut <= 4'd15;
+        pointOut <= 5'd15;
     end
     else
     begin
-        pointOut <= 4'd10;
+        pointOut <= 5'd10;
     end
 end
 endmodule
