@@ -1,0 +1,195 @@
+|main
+clk => clk.IN1
+rst => rst.IN2
+s1 => s1.IN1
+s2 => s2.IN1
+s3 => s3.IN1
+out1[0] << display:LevelDisplay.port1
+out1[1] << display:LevelDisplay.port1
+out1[2] << display:LevelDisplay.port1
+out1[3] << display:LevelDisplay.port1
+out1[4] << display:LevelDisplay.port1
+out1[5] << display:LevelDisplay.port1
+out1[6] << display:LevelDisplay.port1
+out2[0] << display:LevelDisplay.port2
+out2[1] << display:LevelDisplay.port2
+out2[2] << display:LevelDisplay.port2
+out2[3] << display:LevelDisplay.port2
+out2[4] << display:LevelDisplay.port2
+out2[5] << display:LevelDisplay.port2
+out2[6] << display:LevelDisplay.port2
+out3[0] << display:CountDownDisplay.port1
+out3[1] << display:CountDownDisplay.port1
+out3[2] << display:CountDownDisplay.port1
+out3[3] << display:CountDownDisplay.port1
+out3[4] << display:CountDownDisplay.port1
+out3[5] << display:CountDownDisplay.port1
+out3[6] << display:CountDownDisplay.port1
+out4[0] << display:CountDownDisplay.port2
+out4[1] << display:CountDownDisplay.port2
+out4[2] << display:CountDownDisplay.port2
+out4[3] << display:CountDownDisplay.port2
+out4[4] << display:CountDownDisplay.port2
+out4[5] << display:CountDownDisplay.port2
+out4[6] << display:CountDownDisplay.port2
+
+
+|main|clk1Hz:Clk1Hz
+clk => div_clk~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+clk => count[24].CLK
+clk => count[25].CLK
+clk => count[26].CLK
+clk => count[27].CLK
+clk => count[28].CLK
+clk => count[29].CLK
+clk => count[30].CLK
+clk => count[31].CLK
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => count.OUTPUTSELECT
+rst => div_clk.OUTPUTSELECT
+div_clk <= div_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|level:Level
+state1 => always0.IN0
+state1 => always0.IN0
+state2 => always0.IN1
+state2 => always0.IN1
+state3 => always0.IN1
+state3 => always0.IN1
+pointOut[0] <= pointOut.DB_MAX_OUTPUT_PORT_TYPE
+pointOut[1] <= always0.DB_MAX_OUTPUT_PORT_TYPE
+pointOut[2] <= pointOut.DB_MAX_OUTPUT_PORT_TYPE
+pointOut[3] <= always0.DB_MAX_OUTPUT_PORT_TYPE
+pointOut[4] <= always0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|countDown:CountDown
+divClk => overFlow~reg0.CLK
+divClk => timeNow[0]~reg0.CLK
+divClk => timeNow[1]~reg0.CLK
+divClk => timeNow[2]~reg0.CLK
+divClk => timeNow[3]~reg0.CLK
+divClk => timeNow[4]~reg0.CLK
+rst => timeNow.OUTPUTSELECT
+rst => timeNow.OUTPUTSELECT
+rst => timeNow.OUTPUTSELECT
+rst => timeNow.OUTPUTSELECT
+rst => timeNow.OUTPUTSELECT
+rst => overFlow.OUTPUTSELECT
+timeNow[0] <= timeNow[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeNow[1] <= timeNow[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeNow[2] <= timeNow[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeNow[3] <= timeNow[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timeNow[4] <= timeNow[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+overFlow <= overFlow~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:LevelDisplay
+count[0] => Div0.IN8
+count[0] => Mod0.IN8
+count[1] => Div0.IN7
+count[1] => Mod0.IN7
+count[2] => Div0.IN6
+count[2] => Mod0.IN6
+count[3] => Div0.IN5
+count[3] => Mod0.IN5
+count[4] => Div0.IN4
+count[4] => Mod0.IN4
+out1[0] <= out1[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[1] <= out1[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[2] <= out1[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[3] <= out1[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[4] <= out1[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[5] <= out1[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[6] <= out1[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[0] <= out2[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[1] <= out2[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[2] <= out2[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[3] <= out2[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[4] <= out2[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[5] <= out2[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[6] <= out2[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:CountDownDisplay
+count[0] => Div0.IN8
+count[0] => Mod0.IN8
+count[1] => Div0.IN7
+count[1] => Mod0.IN7
+count[2] => Div0.IN6
+count[2] => Mod0.IN6
+count[3] => Div0.IN5
+count[3] => Mod0.IN5
+count[4] => Div0.IN4
+count[4] => Mod0.IN4
+out1[0] <= out1[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[1] <= out1[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[2] <= out1[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[3] <= out1[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[4] <= out1[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[5] <= out1[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out1[6] <= out1[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[0] <= out2[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[1] <= out2[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[2] <= out2[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[3] <= out2[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[4] <= out2[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[5] <= out2[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+out2[6] <= out2[6]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

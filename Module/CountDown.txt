@@ -29,7 +29,7 @@ begin
 end
 endmodule
 
-module counDown(divClk,rst,timeNow,overFlow);
+module countDown(divClk,rst,timeNow,overFlow);
 input divClk,rst;
 output reg [4:0]timeNow;
 output reg overFlow;
