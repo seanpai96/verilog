@@ -528,7 +528,6 @@ module checkkeypad(clk, rst, overFlow,keypadRow, keypadCol,rand,flag,flagrst);
 	input clk, rst,overFlow,flagrst;
 	input[3:0]keypadCol,rand;
 	output [3:0]keypadRow;
-    output reg hit;
 
 	reg[3:0]keypadRow;
 	reg[3:0]keypadBuf;

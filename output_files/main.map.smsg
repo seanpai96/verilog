@@ -1,1 +1,3 @@
-Info (10281): Verilog HDL Declaration information at main.v(198): object "score" differs only in case from object "Score" in the same scope File: C:/Users/user/Desktop/verilog/main.v Line: 198
+Warning (10268): Verilog HDL information at main.v(537): always construct contains both blocking and non-blocking assignments File: D:/Homework/110/verilog/verilog/main.v Line: 537
+Info (10281): Verilog HDL Declaration information at main.v(698): object "hit" differs only in case from object "Hit" in the same scope File: D:/Homework/110/verilog/verilog/main.v Line: 698
+Info (10281): Verilog HDL Declaration information at main.v(716): object "score" differs only in case from object "Score" in the same scope File: D:/Homework/110/verilog/verilog/main.v Line: 716
