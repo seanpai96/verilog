@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Thu Jan 06 12:02:12 2022
+Sat Jan 08 15:19:26 2022
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -14,17 +14,19 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for Inferred Entity Instance: display:LevelDisplay|lpm_divide:Div0
- 12. Parameter Settings for Inferred Entity Instance: display:LevelDisplay|lpm_divide:Mod0
- 13. Parameter Settings for Inferred Entity Instance: display:CountDownDisplay|lpm_divide:Div0
- 14. Parameter Settings for Inferred Entity Instance: display:CountDownDisplay|lpm_divide:Mod0
- 15. Port Connectivity Checks: "countDown:CountDown"
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for Inferred Entity Instance: display:LevelDisplay|lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: display:LevelDisplay|lpm_divide:Div0
+ 15. Parameter Settings for Inferred Entity Instance: display:CountDownDisplay|lpm_divide:Mod0
+ 16. Parameter Settings for Inferred Entity Instance: display:CountDownDisplay|lpm_divide:Div0
+ 17. Port Connectivity Checks: "countDown:CountDown"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,14 +53,14 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jan 06 12:02:12 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jan 08 15:19:26 2022       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; main                                        ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 38                                          ;
-; Total pins                      ; 33                                          ;
+; Total registers                 ; 50                                          ;
+; Total pins                      ; 57                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -185,10 +187,10 @@ agreement for further details.
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal161.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc      ;         ;
-; db/lpm_divide_2am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/user/Desktop/verilog/db/lpm_divide_2am.tdf                        ;         ;
+; db/lpm_divide_52m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/user/Desktop/verilog/db/lpm_divide_52m.tdf                        ;         ;
 ; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/user/Desktop/verilog/db/sign_div_unsign_8kh.tdf                   ;         ;
 ; db/alt_u_div_mse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/user/Desktop/verilog/db/alt_u_div_mse.tdf                         ;         ;
-; db/lpm_divide_52m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/user/Desktop/verilog/db/lpm_divide_52m.tdf                        ;         ;
+; db/lpm_divide_2am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/user/Desktop/verilog/db/lpm_divide_2am.tdf                        ;         ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
@@ -197,25 +199,25 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 80        ;
+; Estimate of Logic utilization (ALMs needed) ; 86        ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 152       ;
+; Combinational ALUT usage for logic          ; 164       ;
 ;     -- 7 input functions                    ; 0         ;
 ;     -- 6 input functions                    ; 8         ;
 ;     -- 5 input functions                    ; 4         ;
 ;     -- 4 input functions                    ; 12        ;
-;     -- <=3 input functions                  ; 128       ;
+;     -- <=3 input functions                  ; 140       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 38        ;
+; Dedicated logic registers                   ; 50        ;
 ;                                             ;           ;
-; I/O pins                                    ; 33        ;
+; I/O pins                                    ; 57        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 33        ;
-; Total fan-out                               ; 571       ;
-; Average fan-out                             ; 2.23      ;
+; Total fan-out                               ; 675       ;
+; Average fan-out                             ; 2.06      ;
 +---------------------------------------------+-----------+
 
 
@@ -224,9 +226,9 @@ agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                            ; Entity Name         ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |main                                     ; 152 (0)             ; 38 (0)                    ; 0                 ; 0          ; 33   ; 0            ; |main                                                                                                                          ; main                ; work         ;
+; |main                                     ; 164 (0)             ; 50 (0)                    ; 0                 ; 0          ; 57   ; 0            ; |main                                                                                                                          ; main                ; work         ;
 ;    |clk1Hz:Clk1Hz|                        ; 41 (41)             ; 33 (33)                   ; 0                 ; 0          ; 0    ; 0            ; |main|clk1Hz:Clk1Hz                                                                                                            ; clk1Hz              ; work         ;
-;    |countDown:CountDown|                  ; 5 (5)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |main|countDown:CountDown                                                                                                      ; countDown           ; work         ;
+;    |countDown:CountDown|                  ; 17 (17)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |main|countDown:CountDown                                                                                                      ; countDown           ; work         ;
 ;    |display:CountDownDisplay|             ; 54 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|display:CountDownDisplay                                                                                                 ; display             ; work         ;
 ;       |lpm_divide:Div0|                   ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|display:CountDownDisplay|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_2am:auto_generated|  ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |main|display:CountDownDisplay|lpm_divide:Div0|lpm_divide_2am:auto_generated                                                   ; lpm_divide_2am      ; work         ;
@@ -250,28 +252,39 @@ agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                          ;
-+-----------------------------------------------------+-------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal           ; Free of Timing Hazards ;
-+-----------------------------------------------------+-------------------------------+------------------------+
-; display:LevelDisplay|out2[0]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:LevelDisplay|out2[1]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:LevelDisplay|out2[2]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:LevelDisplay|out2[3]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:LevelDisplay|out2[4]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:LevelDisplay|out2[5]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:LevelDisplay|out2[6]                        ; display:LevelDisplay|Mux7     ; yes                    ;
-; display:CountDownDisplay|out2[0]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; display:CountDownDisplay|out2[1]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; display:CountDownDisplay|out2[2]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; display:CountDownDisplay|out2[3]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; display:CountDownDisplay|out2[4]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; display:CountDownDisplay|out2[5]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; display:CountDownDisplay|out2[6]                    ; display:CountDownDisplay|Mux7 ; yes                    ;
-; Number of user-specified and inferred latches = 14  ;                               ;                        ;
-+-----------------------------------------------------+-------------------------------+------------------------+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal            ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; display:LevelDisplay|out1[0]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:LevelDisplay|out1[1]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:LevelDisplay|out1[2]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:LevelDisplay|out1[3]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:LevelDisplay|out1[4]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:LevelDisplay|out1[5]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:LevelDisplay|out1[6]                        ; display:LevelDisplay|Mux15     ; yes                    ;
+; display:CountDownDisplay|out1[0]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; display:CountDownDisplay|out1[1]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; display:CountDownDisplay|out1[2]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; display:CountDownDisplay|out1[3]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; display:CountDownDisplay|out1[4]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; display:CountDownDisplay|out1[5]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; display:CountDownDisplay|out1[6]                    ; display:CountDownDisplay|Mux15 ; yes                    ;
+; Number of user-specified and inferred latches = 14  ;                                ;                        ;
++-----------------------------------------------------+--------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; addScore:Score|flagNow                ; Stuck at GND due to stuck port data_in      ;
+; addScore:Score|score[0..4]            ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 6 ;                                             ;
++---------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -279,46 +292,37 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 38    ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 50    ;
+; Number of registers using Synchronous Clear  ; 33    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 17    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main|clk1Hz:Clk1Hz|count[3] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; countDown:CountDown|timeNow[0]         ; 9       ;
+; countDown:CountDown|timeNow[1]         ; 10      ;
+; countDown:CountDown|timeNow[2]         ; 8       ;
+; countDown:CountDown|timeNow[3]         ; 8       ;
+; countDown:CountDown|timeNow[4]         ; 6       ;
+; Total number of inverted registers = 5 ;         ;
++----------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: display:LevelDisplay|lpm_divide:Div0 ;
-+------------------------+----------------+---------------------------------------------+
-; Parameter Name         ; Value          ; Type                                        ;
-+------------------------+----------------+---------------------------------------------+
-; LPM_WIDTHN             ; 5              ; Untyped                                     ;
-; LPM_WIDTHD             ; 4              ; Untyped                                     ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
-; LPM_PIPELINE           ; 0              ; Untyped                                     ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
-; CBXI_PARAMETER         ; lpm_divide_2am ; Untyped                                     ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
-+------------------------+----------------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |main|clk1Hz:Clk1Hz|count[30] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -344,26 +348,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: display:CountDownDisplay|lpm_divide:Div0 ;
-+------------------------+----------------+-------------------------------------------------+
-; Parameter Name         ; Value          ; Type                                            ;
-+------------------------+----------------+-------------------------------------------------+
-; LPM_WIDTHN             ; 5              ; Untyped                                         ;
-; LPM_WIDTHD             ; 4              ; Untyped                                         ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
-; LPM_PIPELINE           ; 0              ; Untyped                                         ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
-; CBXI_PARAMETER         ; lpm_divide_2am ; Untyped                                         ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
-+------------------------+----------------+-------------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: display:LevelDisplay|lpm_divide:Div0 ;
++------------------------+----------------+---------------------------------------------+
+; Parameter Name         ; Value          ; Type                                        ;
++------------------------+----------------+---------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                     ;
+; LPM_WIDTHD             ; 4              ; Untyped                                     ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                     ;
+; LPM_PIPELINE           ; 0              ; Untyped                                     ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                     ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                     ;
+; CBXI_PARAMETER         ; lpm_divide_2am ; Untyped                                     ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                     ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                     ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                              ;
++------------------------+----------------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -390,6 +394,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: display:CountDownDisplay|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                            ;
++------------------------+----------------+-------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                         ;
+; LPM_WIDTHD             ; 4              ; Untyped                                         ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                         ;
+; LPM_PIPELINE           ; 0              ; Untyped                                         ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                         ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                         ;
+; CBXI_PARAMETER         ; lpm_divide_2am ; Untyped                                         ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                         ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                         ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                    ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                  ;
++------------------------+----------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "countDown:CountDown"                                                                    ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -404,19 +431,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 38                          ;
-;     SCLR              ; 32                          ;
-;     plain             ; 6                           ;
-; arriav_lcell_comb     ; 155                         ;
+; arriav_ff             ; 50                          ;
+;     CLR               ; 1                           ;
+;     CLR SLD           ; 1                           ;
+;     ENA CLR           ; 15                          ;
+;     SCLR              ; 33                          ;
+; arriav_lcell_comb     ; 168                         ;
 ;     arith             ; 72                          ;
 ;         0 data inputs ; 12                          ;
 ;         1 data inputs ; 44                          ;
 ;         2 data inputs ; 6                           ;
 ;         3 data inputs ; 8                           ;
 ;         4 data inputs ; 2                           ;
-;     normal            ; 73                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
+;     normal            ; 86                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 17                          ;
 ;         3 data inputs ; 31                          ;
 ;         4 data inputs ; 10                          ;
@@ -425,10 +454,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     shared            ; 10                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 8                           ;
-; boundary_port         ; 33                          ;
+; boundary_port         ; 57                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.80                        ;
-; Average LUT depth     ; 4.60                        ;
+; Average LUT depth     ; 4.27                        ;
 +-----------------------+-----------------------------+
 
 
@@ -447,126 +476,143 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Jan 06 12:02:05 2022
+    Info: Processing started: Sat Jan 08 15:19:19 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 5 design units, including 5 entities, in source file main.v
+Info (12021): Found 6 design units, including 6 entities, in source file main.v
     Info (12023): Found entity 1: clk1Hz File: C:/Users/user/Desktop/verilog/main.v Line: 3
     Info (12023): Found entity 2: level File: C:/Users/user/Desktop/verilog/main.v Line: 32
     Info (12023): Found entity 3: countDown File: C:/Users/user/Desktop/verilog/main.v Line: 53
-    Info (12023): Found entity 4: display File: C:/Users/user/Desktop/verilog/main.v Line: 77
-    Info (12023): Found entity 5: main File: C:/Users/user/Desktop/verilog/main.v Line: 117
+    Info (12023): Found entity 4: display File: C:/Users/user/Desktop/verilog/main.v Line: 122
+    Info (12023): Found entity 5: addScore File: C:/Users/user/Desktop/verilog/main.v Line: 162
+    Info (12023): Found entity 6: main File: C:/Users/user/Desktop/verilog/main.v Line: 184
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Info (12128): Elaborating entity "clk1Hz" for hierarchy "clk1Hz:Clk1Hz" File: C:/Users/user/Desktop/verilog/main.v Line: 121
-Info (12128): Elaborating entity "level" for hierarchy "level:Level" File: C:/Users/user/Desktop/verilog/main.v Line: 123
-Info (12128): Elaborating entity "countDown" for hierarchy "countDown:CountDown" File: C:/Users/user/Desktop/verilog/main.v Line: 126
-Warning (10230): Verilog HDL assignment warning at main.v(69): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 69
-Warning (10230): Verilog HDL assignment warning at main.v(72): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 72
-Info (12128): Elaborating entity "display" for hierarchy "display:LevelDisplay" File: C:/Users/user/Desktop/verilog/main.v Line: 127
+Info (12128): Elaborating entity "clk1Hz" for hierarchy "clk1Hz:Clk1Hz" File: C:/Users/user/Desktop/verilog/main.v Line: 189
+Info (12128): Elaborating entity "level" for hierarchy "level:Level" File: C:/Users/user/Desktop/verilog/main.v Line: 191
+Info (12128): Elaborating entity "countDown" for hierarchy "countDown:CountDown" File: C:/Users/user/Desktop/verilog/main.v Line: 194
 Warning (10230): Verilog HDL assignment warning at main.v(85): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 85
-Warning (10230): Verilog HDL assignment warning at main.v(86): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 86
-Warning (10235): Verilog HDL Always Construct warning at main.v(90): variable "first" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/verilog/main.v Line: 90
-Warning (10270): Verilog HDL Case Statement warning at main.v(90): incomplete case statement has no default case item File: C:/Users/user/Desktop/verilog/main.v Line: 90
-Warning (10235): Verilog HDL Always Construct warning at main.v(102): variable "second" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/verilog/main.v Line: 102
-Warning (10270): Verilog HDL Case Statement warning at main.v(102): incomplete case statement has no default case item File: C:/Users/user/Desktop/verilog/main.v Line: 102
-Warning (10240): Verilog HDL Always Construct warning at main.v(88): inferring latch(es) for variable "out1", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (10240): Verilog HDL Always Construct warning at main.v(88): inferring latch(es) for variable "out2", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[0]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[1]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[2]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[3]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[4]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[5]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out2[6]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[0]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[1]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[2]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[3]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[4]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[5]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Info (10041): Inferred latch for "out1[6]" at main.v(88) File: C:/Users/user/Desktop/verilog/main.v Line: 88
+Warning (10230): Verilog HDL assignment warning at main.v(88): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 88
+Info (12128): Elaborating entity "display" for hierarchy "display:LevelDisplay" File: C:/Users/user/Desktop/verilog/main.v Line: 195
+Warning (10230): Verilog HDL assignment warning at main.v(130): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 130
+Warning (10230): Verilog HDL assignment warning at main.v(131): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 131
+Warning (10235): Verilog HDL Always Construct warning at main.v(135): variable "first" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/verilog/main.v Line: 135
+Warning (10270): Verilog HDL Case Statement warning at main.v(135): incomplete case statement has no default case item File: C:/Users/user/Desktop/verilog/main.v Line: 135
+Warning (10235): Verilog HDL Always Construct warning at main.v(147): variable "second" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/user/Desktop/verilog/main.v Line: 147
+Warning (10270): Verilog HDL Case Statement warning at main.v(147): incomplete case statement has no default case item File: C:/Users/user/Desktop/verilog/main.v Line: 147
+Warning (10240): Verilog HDL Always Construct warning at main.v(133): inferring latch(es) for variable "out1", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (10240): Verilog HDL Always Construct warning at main.v(133): inferring latch(es) for variable "out2", which holds its previous value in one or more paths through the always construct File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[0]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[1]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[2]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[3]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[4]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[5]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out2[6]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[0]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[1]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[2]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[3]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[4]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[5]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (10041): Inferred latch for "out1[6]" at main.v(133) File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Info (12128): Elaborating entity "addScore" for hierarchy "addScore:Score" File: C:/Users/user/Desktop/verilog/main.v Line: 199
+Warning (10230): Verilog HDL assignment warning at main.v(177): truncated value with size 32 to match size of target (5) File: C:/Users/user/Desktop/verilog/main.v Line: 177
 Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:LevelDisplay|Div0" File: C:/Users/user/Desktop/verilog/main.v Line: 85
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:LevelDisplay|Mod0" File: C:/Users/user/Desktop/verilog/main.v Line: 86
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:CountDownDisplay|Div0" File: C:/Users/user/Desktop/verilog/main.v Line: 85
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:CountDownDisplay|Mod0" File: C:/Users/user/Desktop/verilog/main.v Line: 86
-Info (12130): Elaborated megafunction instantiation "display:LevelDisplay|lpm_divide:Div0" File: C:/Users/user/Desktop/verilog/main.v Line: 85
-Info (12133): Instantiated megafunction "display:LevelDisplay|lpm_divide:Div0" with the following parameter: File: C:/Users/user/Desktop/verilog/main.v Line: 85
-    Info (12134): Parameter "LPM_WIDTHN" = "5"
-    Info (12134): Parameter "LPM_WIDTHD" = "4"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2am.tdf
-    Info (12023): Found entity 1: lpm_divide_2am File: C:/Users/user/Desktop/verilog/db/lpm_divide_2am.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_8kh File: C:/Users/user/Desktop/verilog/db/sign_div_unsign_8kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mse.tdf
-    Info (12023): Found entity 1: alt_u_div_mse File: C:/Users/user/Desktop/verilog/db/alt_u_div_mse.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "display:LevelDisplay|lpm_divide:Mod0" File: C:/Users/user/Desktop/verilog/main.v Line: 86
-Info (12133): Instantiated megafunction "display:LevelDisplay|lpm_divide:Mod0" with the following parameter: File: C:/Users/user/Desktop/verilog/main.v Line: 86
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:LevelDisplay|Mod0" File: C:/Users/user/Desktop/verilog/main.v Line: 130
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:LevelDisplay|Div0" File: C:/Users/user/Desktop/verilog/main.v Line: 131
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:CountDownDisplay|Mod0" File: C:/Users/user/Desktop/verilog/main.v Line: 130
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "display:CountDownDisplay|Div0" File: C:/Users/user/Desktop/verilog/main.v Line: 131
+Info (12130): Elaborated megafunction instantiation "display:LevelDisplay|lpm_divide:Mod0" File: C:/Users/user/Desktop/verilog/main.v Line: 130
+Info (12133): Instantiated megafunction "display:LevelDisplay|lpm_divide:Mod0" with the following parameter: File: C:/Users/user/Desktop/verilog/main.v Line: 130
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_52m.tdf
     Info (12023): Found entity 1: lpm_divide_52m File: C:/Users/user/Desktop/verilog/db/lpm_divide_52m.tdf Line: 25
-Warning (14026): LATCH primitive "display:LevelDisplay|out1[0]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:LevelDisplay|out1[2]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:LevelDisplay|out1[3]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:LevelDisplay|out1[4]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:LevelDisplay|out1[5]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:LevelDisplay|out1[6]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:CountDownDisplay|out1[0]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:CountDownDisplay|out1[2]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:CountDownDisplay|out1[3]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:CountDownDisplay|out1[4]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:CountDownDisplay|out1[5]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (14026): LATCH primitive "display:CountDownDisplay|out1[6]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 88
-Warning (13012): Latch display:LevelDisplay|out2[0] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 118
-Warning (13012): Latch display:LevelDisplay|out2[1] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: C:/Users/user/Desktop/verilog/db/sign_div_unsign_8kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mse.tdf
+    Info (12023): Found entity 1: alt_u_div_mse File: C:/Users/user/Desktop/verilog/db/alt_u_div_mse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "display:LevelDisplay|lpm_divide:Div0" File: C:/Users/user/Desktop/verilog/main.v Line: 131
+Info (12133): Instantiated megafunction "display:LevelDisplay|lpm_divide:Div0" with the following parameter: File: C:/Users/user/Desktop/verilog/main.v Line: 131
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2am.tdf
+    Info (12023): Found entity 1: lpm_divide_2am File: C:/Users/user/Desktop/verilog/db/lpm_divide_2am.tdf Line: 25
+Warning (14026): LATCH primitive "display:LevelDisplay|out2[0]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:LevelDisplay|out2[2]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:LevelDisplay|out2[3]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:LevelDisplay|out2[4]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:LevelDisplay|out2[5]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:LevelDisplay|out2[6]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:CountDownDisplay|out2[0]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:CountDownDisplay|out2[2]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:CountDownDisplay|out2[3]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:CountDownDisplay|out2[4]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:CountDownDisplay|out2[5]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (14026): LATCH primitive "display:CountDownDisplay|out2[6]" is permanently enabled File: C:/Users/user/Desktop/verilog/main.v Line: 133
+Warning (13012): Latch display:LevelDisplay|out1[0] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 185
+Warning (13012): Latch display:LevelDisplay|out1[1] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
     Warning (13013): Ports D and ENA on the latch are fed by the same signal level:Level|pointOut[4] File: C:/Users/user/Desktop/verilog/main.v Line: 34
-Warning (13012): Latch display:LevelDisplay|out2[2] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
+Warning (13012): Latch display:LevelDisplay|out1[2] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
     Warning (13013): Ports D and ENA on the latch are fed by the same signal level:Level|pointOut[4] File: C:/Users/user/Desktop/verilog/main.v Line: 34
-Warning (13012): Latch display:LevelDisplay|out2[3] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 118
-Warning (13012): Latch display:LevelDisplay|out2[4] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 118
-Warning (13012): Latch display:LevelDisplay|out2[5] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 118
-Warning (13012): Latch display:LevelDisplay|out2[6] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 118
-Warning (13012): Latch display:CountDownDisplay|out2[0] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 57
-Warning (13012): Latch display:CountDownDisplay|out2[1] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[2] File: C:/Users/user/Desktop/verilog/main.v Line: 57
-Warning (13012): Latch display:CountDownDisplay|out2[2] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[2] File: C:/Users/user/Desktop/verilog/main.v Line: 57
-Warning (13012): Latch display:CountDownDisplay|out2[3] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 57
-Warning (13012): Latch display:CountDownDisplay|out2[4] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[2] File: C:/Users/user/Desktop/verilog/main.v Line: 57
-Warning (13012): Latch display:CountDownDisplay|out2[5] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 57
-Warning (13012): Latch display:CountDownDisplay|out2[6] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 88
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 57
+Warning (13012): Latch display:LevelDisplay|out1[3] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 185
+Warning (13012): Latch display:LevelDisplay|out1[4] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 185
+Warning (13012): Latch display:LevelDisplay|out1[5] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 185
+Warning (13012): Latch display:LevelDisplay|out1[6] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s1 File: C:/Users/user/Desktop/verilog/main.v Line: 185
+Warning (13012): Latch display:CountDownDisplay|out1[0] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 80
+Warning (13012): Latch display:CountDownDisplay|out1[1] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[2] File: C:/Users/user/Desktop/verilog/main.v Line: 80
+Warning (13012): Latch display:CountDownDisplay|out1[2] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[2] File: C:/Users/user/Desktop/verilog/main.v Line: 80
+Warning (13012): Latch display:CountDownDisplay|out1[3] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 80
+Warning (13012): Latch display:CountDownDisplay|out1[4] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[2] File: C:/Users/user/Desktop/verilog/main.v Line: 80
+Warning (13012): Latch display:CountDownDisplay|out1[5] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 80
+Warning (13012): Latch display:CountDownDisplay|out1[6] has unsafe behavior File: C:/Users/user/Desktop/verilog/main.v Line: 133
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal countDown:CountDown|timeNow[1] File: C:/Users/user/Desktop/verilog/main.v Line: 80
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out1[1]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 119
-    Warning (13410): Pin "out3[1]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 119
+    Warning (13410): Pin "out2[1]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out4[1]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[0]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[1]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[2]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[3]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[4]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[5]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out5[6]" is stuck at VCC File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[0]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[1]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[2]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[3]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[4]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[5]" is stuck at GND File: C:/Users/user/Desktop/verilog/main.v Line: 187
+    Warning (13410): Pin "out6[6]" is stuck at VCC File: C:/Users/user/Desktop/verilog/main.v Line: 187
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file C:/Users/user/Desktop/verilog/output_files/main.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 185 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 221 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 152 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 164 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
     Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Thu Jan 06 12:02:12 2022
+    Info: Processing ended: Sat Jan 08 15:19:26 2022
     Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +------------------------------------------+

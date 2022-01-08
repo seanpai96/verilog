@@ -3,195 +3,195 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 's1'
-Slack : -11.586
-TNS   : -73.960
+Slack : -16.929
+TNS   : -68.431
 
 Type  : Slow 1100mV 85C Model Setup 'countDown:CountDown|timeNow[0]'
-Slack : -11.574
-TNS   : -70.065
+Slack : -11.026
+TNS   : -75.706
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -5.783
-TNS   : -111.663
+Slack : -5.614
+TNS   : -110.308
 
 Type  : Slow 1100mV 85C Model Setup 'clk1Hz:Clk1Hz|div_clk'
-Slack : -2.575
-TNS   : -11.560
+Slack : -2.817
+TNS   : -32.242
 
 Type  : Slow 1100mV 85C Model Hold 's1'
-Slack : -4.250
-TNS   : -23.711
+Slack : -4.206
+TNS   : -20.351
 
 Type  : Slow 1100mV 85C Model Hold 'countDown:CountDown|timeNow[0]'
-Slack : -1.471
-TNS   : -4.802
-
-Type  : Slow 1100mV 85C Model Hold 'clk1Hz:Clk1Hz|div_clk'
-Slack : 0.184
-TNS   : 0.000
+Slack : -0.412
+TNS   : -2.358
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.443
+Slack : 0.439
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clk1Hz:Clk1Hz|div_clk'
+Slack : 0.548
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 's1'
-Slack : -3.360
-TNS   : -344.420
+Slack : -3.123
+TNS   : -318.309
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'countDown:CountDown|timeNow[0]'
-Slack : -0.629
-TNS   : -18.643
+Slack : -0.836
+TNS   : -16.797
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -0.538
-TNS   : -25.545
+TNS   : -25.403
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk1Hz:Clk1Hz|div_clk'
 Slack : -0.538
-TNS   : -4.127
-
-Type  : Slow 1100mV 0C Model Setup 'countDown:CountDown|timeNow[0]'
-Slack : -11.454
-TNS   : -70.113
+TNS   : -15.825
 
 Type  : Slow 1100mV 0C Model Setup 's1'
-Slack : -11.419
-TNS   : -72.776
+Slack : -16.538
+TNS   : -67.015
+
+Type  : Slow 1100mV 0C Model Setup 'countDown:CountDown|timeNow[0]'
+Slack : -11.055
+TNS   : -76.123
 
 Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -5.866
-TNS   : -110.679
+Slack : -5.689
+TNS   : -110.048
 
 Type  : Slow 1100mV 0C Model Setup 'clk1Hz:Clk1Hz|div_clk'
-Slack : -2.502
-TNS   : -11.421
+Slack : -2.816
+TNS   : -31.232
 
 Type  : Slow 1100mV 0C Model Hold 's1'
-Slack : -4.491
-TNS   : -25.315
+Slack : -4.448
+TNS   : -22.720
 
 Type  : Slow 1100mV 0C Model Hold 'countDown:CountDown|timeNow[0]'
-Slack : -1.709
-TNS   : -6.151
-
-Type  : Slow 1100mV 0C Model Hold 'clk1Hz:Clk1Hz|div_clk'
-Slack : 0.334
-TNS   : 0.000
+Slack : -0.786
+TNS   : -4.346
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.448
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clk1Hz:Clk1Hz|div_clk'
+Slack : 0.638
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 's1'
-Slack : -3.499
-TNS   : -369.598
+Slack : -3.351
+TNS   : -341.762
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'countDown:CountDown|timeNow[0]'
-Slack : -0.850
-TNS   : -24.597
+Slack : -0.863
+TNS   : -21.722
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -0.538
-TNS   : -26.256
+TNS   : -26.125
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk1Hz:Clk1Hz|div_clk'
 Slack : -0.538
-TNS   : -4.093
+TNS   : -16.304
 
 Type  : Fast 1100mV 85C Model Setup 's1'
-Slack : -6.794
-TNS   : -43.488
+Slack : -10.280
+TNS   : -39.772
 
 Type  : Fast 1100mV 85C Model Setup 'countDown:CountDown|timeNow[0]'
-Slack : -5.917
-TNS   : -34.361
+Slack : -5.282
+TNS   : -35.958
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -3.086
-TNS   : -41.135
+Slack : -2.946
+TNS   : -39.009
 
 Type  : Fast 1100mV 85C Model Setup 'clk1Hz:Clk1Hz|div_clk'
-Slack : -1.136
-TNS   : -5.087
+Slack : -1.348
+TNS   : -14.045
 
 Type  : Fast 1100mV 85C Model Hold 's1'
-Slack : -1.859
-TNS   : -10.245
+Slack : -1.835
+TNS   : -8.349
 
 Type  : Fast 1100mV 85C Model Hold 'countDown:CountDown|timeNow[0]'
-Slack : -0.657
-TNS   : -2.094
+Slack : 0.117
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clk1Hz:Clk1Hz|div_clk'
-Slack : -0.096
-TNS   : -0.096
+Slack : 0.172
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.199
+Slack : 0.198
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 's1'
-Slack : -1.635
-TNS   : -115.545
+Slack : -1.518
+TNS   : -100.947
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.411
-TNS   : -3.450
+Slack : -0.260
+TNS   : -3.253
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk1Hz:Clk1Hz|div_clk'
-Slack : -0.010
-TNS   : -0.010
+Slack : -0.039
+TNS   : -0.576
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'countDown:CountDown|timeNow[0]'
-Slack : 0.108
+Slack : 0.082
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 's1'
-Slack : -6.060
-TNS   : -38.782
+Slack : -9.066
+TNS   : -35.331
 
 Type  : Fast 1100mV 0C Model Setup 'countDown:CountDown|timeNow[0]'
-Slack : -5.267
-TNS   : -30.907
+Slack : -4.773
+TNS   : -32.707
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -2.785
-TNS   : -35.582
+Slack : -2.640
+TNS   : -33.287
 
 Type  : Fast 1100mV 0C Model Setup 'clk1Hz:Clk1Hz|div_clk'
-Slack : -0.963
-TNS   : -4.395
+Slack : -1.212
+TNS   : -11.894
 
 Type  : Fast 1100mV 0C Model Hold 's1'
-Slack : -1.804
-TNS   : -9.853
+Slack : -1.761
+TNS   : -8.035
 
 Type  : Fast 1100mV 0C Model Hold 'countDown:CountDown|timeNow[0]'
-Slack : -0.732
-TNS   : -2.436
+Slack : 0.015
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clk1Hz:Clk1Hz|div_clk'
-Slack : -0.085
-TNS   : -0.085
+Slack : 0.158
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : 0.190
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 's1'
-Slack : -1.566
-TNS   : -108.092
+Slack : -1.451
+TNS   : -94.112
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.403
-TNS   : -3.505
+Slack : -0.265
+TNS   : -3.292
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk1Hz:Clk1Hz|div_clk'
-Slack : 0.029
-TNS   : 0.000
+Slack : -0.017
+TNS   : -0.216
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'countDown:CountDown|timeNow[0]'
-Slack : 0.108
+Slack : 0.099
 TNS   : 0.000
 
 ------------------------------------------------------------
